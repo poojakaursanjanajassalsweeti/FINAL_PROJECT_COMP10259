@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Write your species name under the title -->
+	<title> Contact us</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+<!-- Header Start -->
+<header class="header">
+	<div class="container">
+		<div class="row justify-content-between align-items-center">
+			<div class="fish-name">
+                <!-- Write your species name under the anchor tag -->
+				<a href="index.html">Contact us</a>
+			</div>
+	 <div class="nav-toggle">
+	   <span></span>
+	 </div>
+     <section class="contact">
+        <div class="contain">
+			<main class="contact-form">
+				<form action="https://formspree.io/f/mdoreogl" method="POST" id="contactForm">
+					<label for="firstName">First Name:</label>
+					<input type="text" id="firstName" name="firstName" required>
+					<div>
+						<label for="lastName">Last Name:</label>
+						<input type="text" id="lastName" name="lastName" required>
+					</div>
+					<div>
+						<label for="email">Email:</label>
+						<input type="email" id="email" name="email" required>
+					</div>
+					<div>
+						<label for="date">Date:</label>
+						<input type="text" id="date" name="date" placeholder="dd/mm/yy" required>
+					</div>
+					<div>
+						<label for="phone">Phone:</label>
+						<input type="tel" id="phone" name="phone" required>
+					</div>
+					<div>
+						<label for="message">Message:</label>
+						<textarea id="message" name="message" rows="4" required></textarea>
+					</div>
+					<div>
+						<button class="button button-1" type="submit">Submit</button>
+					</div>
+				</form>
+			</main>
+        </div>
+     </section>

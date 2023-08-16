@@ -1,0 +1,394 @@
+/* Designing overall page*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+
+/*Setting Up CSS Box Model*/
+*{
+	box-sizing: border-box;
+	margin:0;
+}
+
+/*Setting Up Body*/
+body{
+  margin:0;
+  line-height: 1.5;
+  background-color: #b6b4b3;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+ }
+
+/*Designing Container Classes*/
+  .container{
+    max-width: 1170px;
+    margin:auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.align-items-center{
+    align-items: center;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+
+/* Designing Header */
+.header{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	z-index:99;
+	transition: all 0.5s ease;
+}
+
+.header.fixed{
+	background-color: #ffffff;
+	position: fixed;
+}
+.header .fish-name{
+	padding:0 15px;
+}
+.header .fish-name a{
+	text-decoration: none;
+	font-size: 30px;
+	color:#ffffff;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing:2px;
+	transition: all 0.5s ease;
+}
+.header.fixed .fish-name a{
+	color:#000000;
+}
+
+.header .nav-toggle{
+	width: 40px;
+	height: 34px;
+	border:1px solid #ffffff;
+	border-radius: 3px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s ease;
+	display: none;
+}
+.header.fixed .nav-toggle{
+   border-color: #000000;
+}
+.header .nav-toggle span{
+	height: 1px;
+	display: block;
+	width: 16px;
+	background-color: #ffffff;
+	position: relative;
+	transition: all 0.5s ease;
+}
+.header .nav-toggle span:before,
+.header .nav-toggle span:after{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	height: 1px;
+	width: 100%;
+	background-color: #ffffff;
+	transition: all 0.5s ease;
+}
+.header.fixed .nav-toggle span,
+.header.fixed .nav-toggle span:before,
+.header.fixed .nav-toggle span:after{
+  background-color: #cc0a0ad4;
+}
+.header .nav-toggle span:before{
+	transform:translateY(-6px);
+}
+.header .nav-toggle span:after{
+	transform:translateY(6px);
+}
+
+.header .nav{
+	padding:0 15px;
+}
+.header .nav ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+.header .nav ul li{
+	display: inline-block;
+	margin-left: 30px;
+}
+.header .nav ul li a{
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	color:#fdf91b;
+	padding:25px 0;
+	display: block;
+	transition: all 0.5s ease;
+}
+.header.fixed .nav ul li a{
+  color:#db1212da;
+}
+.header.fixed .nav ul li a:hover,
+.header .nav ul li a:hover{
+	color:#FFFFFF;
+}
+
+/* Designing Home section */
+.home-section{
+    min-height: 100vh;
+    background-image: url('../img/aqua.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    padding:0 15px;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 90px;
+}
+
+/* Designing About section */
+.about-section{
+	padding:80px 0 0;
+	color: white;
+	background-color: rgba(209, 14, 14, 0.913);
+}
+
+/* Designing Prey & Predators Section */
+
+.predators-section{
+	padding:80px 0 0;
+	color: white;
+	background-color: rgba(210, 11, 11, 0.893);
+}
+
+/* Designing Food Section */
+
+/* .gallery-section{
+	padding:80px 0 0;
+	color: white;
+	background-color: rgba(201, 25, 25, 0.874);
+} */
+#gallery {
+	padding-top: 40px;
+  }
+  @media screen and (min-width: 991px) {
+	#gallery {
+	  padding: 60px 30px 0 30px;
+	}
+  }
+  
+  .img-wrapper {
+	position: relative;
+	margin-top: 15px;
+  }
+  .img-wrapper img {
+	width: 100%;
+  }
+  
+  .img-overlay {
+	background: rgba(0, 0, 0, 0.7);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+  }
+  .img-overlay i {
+	color: #fff;
+	font-size: 3em;
+  }
+  
+  #overlay {
+	background: rgba(0, 0, 0, 0.7);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  #overlay img {
+	margin: 0;
+	width: 80%;
+	height: auto;
+	-o-object-fit: contain;
+	   object-fit: contain;
+	padding: 5%;
+  }
+  @media screen and (min-width: 768px) {
+	#overlay img {
+	  width: 60%;
+	}
+  }
+  @media screen and (min-width: 1200px) {
+	#overlay img {
+	  width: 50%;
+	}
+  }
+  
+  #nextButton {
+	color: #fff;
+	font-size: 2em;
+	transition: opacity 0.8s;
+  }
+  #nextButton:hover {
+	opacity: 0.7;
+  }
+  @media screen and (min-width: 768px) {
+	#nextButton {
+	  font-size: 3em;
+	}
+  }
+  
+  #prevButton {
+	color: #fff;
+	font-size: 2em;
+	transition: opacity 0.8s;
+  }
+  #prevButton:hover {
+	opacity: 0.7;
+  }
+  @media screen and (min-width: 768px) {
+	#prevButton {
+	  font-size: 3em;
+	}
+  }
+  
+  #exitButton {
+	color: #fff;
+	font-size: 2em;
+	transition: opacity 0.8s;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+  }
+  #exitButton:hover {
+	opacity: 0.7;
+  }
+  @media screen and (min-width: 768px) {
+	#exitButton {
+	  font-size: 3em;
+	}
+  }
+
+/* Designing World Count Section */
+
+.count-section{
+	padding:80px 0 0;
+	color: white;
+	background-color: rgba(189, 14, 14, 0.842);
+}
+
+.honesty {
+    margin-top: 80px;
+    text-align: center;
+	color: white;
+	background-color: black;
+}
+
+.honesty ul {
+    list-style: none;
+	color: white;
+	background-color: black;
+}
+
+.honesty ol {
+    list-style: none;
+	color: white;
+	background-color: black;
+}
+
+.honesty a {
+    color: white;
+	background-color: black;
+}
+/* Global styles */
+body {
+	background-color: black;
+	color: white;
+	font-family: Arial, sans-serif;
+	text-align: center;
+	padding: 20px;
+  }
+  
+  /* Header styles */
+  .header {
+	text-align: center;
+  }
+  
+  .fish-name {
+	margin: 20px 0;
+  }
+  
+  .fish-name a {
+	font-size: 32px;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+  }
+  
+  /* Contact Us section styles */
+  .contact {
+	margin-top: 50px;
+  }
+  .contain {
+    border-style: dashed;
+}
+  
+  .contact .contain {
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+  }
+  
+  .contact h3 {
+	font-size: 24px;
+	font-weight: bold;
+  }
+  
+  .contact p {
+	font-size: 16px;
+  }
+  .button {
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	color: #000;
+	text-transform: uppercase;
+	font-weight: 600;
+	cursor: pointer;
+	display: inline-block;
+  }
+  
+  .button-1 {
+	background-color: transparent;
+	border: 1px solid silver;
+	border-radius: 50px;
+	-webkit-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;
+	color: white;
+  }
+  .button-1:hover {
+	box-shadow: 0 0 0.2px 0 silver inset, 0 0 2px 2px silver;
+	border: 1px solid silver;
+  }
+  section#gallery {
+	background-color: rgba(210, 11, 11, 0.893);
+}
